@@ -1,6 +1,5 @@
 package com.firebase.kotlin.juliocatano.guestdetailssample.presenter
 
-import com.firebase.kotlin.juliocatano.guestdetailssample.model.TravelDocumentChange
 import com.firebase.kotlin.juliocatano.guestdetailssample.view.GuestDetailCoordinatorView
 import com.firebase.kotlin.juliocatano.guestdetailssample.view.TravelSectionView
 import io.reactivex.Observer
@@ -16,17 +15,17 @@ class GuestDetailCoordinatorPresenter(val view: GuestDetailCoordinatorView) {
         val presenterObserver = PresenterObserver()
         sections = listOf(
                 TravelSectionPresenter(TravelSectionView(view.getTravelSection())).apply {
-            subscribeToEvents().subscribe(presenterObserver)
-        })
+                    subscribeToEvents().subscribe(presenterObserver)
+                })
     }
 
-    inner class PresenterObserver: Observer<String> {
+    inner class PresenterObserver : Observer<String> {
         override fun onComplete() {}
 
         override fun onSubscribe(d: Disposable) {}
 
         override fun onNext(event: String) {
-            when(event) {
+            when (event) {
                 "DOB_CHANGED" -> executeSomething()
                 "CONTINUE_EVENT" -> processSections()
             }
@@ -36,7 +35,7 @@ class GuestDetailCoordinatorPresenter(val view: GuestDetailCoordinatorView) {
     }
 
     private fun processSections() {
-        if(areSectionsValid()) {
+        if (areSectionsValid()) {
 
         }
     }
