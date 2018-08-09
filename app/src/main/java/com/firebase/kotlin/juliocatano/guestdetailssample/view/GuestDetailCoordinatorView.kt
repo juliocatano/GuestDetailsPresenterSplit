@@ -13,8 +13,6 @@ class GuestDetailCoordinatorView(activity: Activity) {
     }
 
     fun getTravelSection(): View? {
-        return weakActivity.get()?.let {
-            it.recycler
-        }
+        return weakActivity.get()?.recycler
     }
 }

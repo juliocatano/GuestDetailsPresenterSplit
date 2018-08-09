@@ -4,7 +4,7 @@ import com.firebase.kotlin.juliocatano.guestdetailssample.model.TravelDocumentCh
 import com.firebase.kotlin.juliocatano.guestdetailssample.view.TravelSectionView
 import io.reactivex.Observable
 
-class TravelSectionPresenter(val view: TravelSectionView) : GuestDetailSection<TravelDocumentChange, TravelDocumentChange> {
+class TravelSectionPresenter(val view: TravelSectionView) : GuestDetailSection<TravelDocumentChange> {
     override fun getModel(): TravelDocumentChange {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
@@ -13,7 +13,7 @@ class TravelSectionPresenter(val view: TravelSectionView) : GuestDetailSection<T
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun subscribeToEvents(): Observable<TravelDocumentChange> {
+    override fun subscribeToEvents(): Observable<String> {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
